@@ -62,17 +62,10 @@ export default class Germoney extends React.Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <div>
-          <img src={logo} alt="drizzle-logo" />
-          <h1>Germoney</h1>
-          <p>
-            Very simplistic interface to buy the most important token in the
-            Ethereum ecosystem.
-          </p>
-        </div>
+    const { web3 } = window;
 
+    const sectionWithWeb3 = (
+      <div>
         <div className="section">
           <h2>Buy Germoney</h2>
           <p>Go ahead and by this awesome currency.</p>
@@ -97,6 +90,34 @@ export default class Germoney extends React.Component {
           />
           <p>{this.state.balance + " GER"}</p>
         </div>
+      </div>
+    );
+
+    const sectionWithoutWeb3 = (
+      <div className="section">
+        <h2>web3 is missing</h2>
+        {"Please use a web3 enabled browser or add-on to buy Germoney"}
+        <br></br>
+        <br></br>
+        <a href="https://metamask.io/">Meta Mask (add-on)</a>
+        <br></br>
+        <a href="https://status.im/">Status.im (mobile)</a>
+        <br></br>
+        <a href="https://trustwallet.com/">Trust wallet (mobile)</a>
+      </div>
+    );
+
+    return (
+      <div className="App">
+        <div>
+          <img src={logo} alt="drizzle-logo" />
+          <h1>Germoney</h1>
+          <p>
+            Very simplistic interface to buy the most important token in the
+            Ethereum ecosystem.
+          </p>
+        </div>
+        {web3 ? sectionWithWeb3 : sectionWithoutWeb3}
         <div className="section">
           <h2>Germoney in numbers</h2>
           <p>

@@ -8,7 +8,14 @@ import { Drizzle, generateStore } from "drizzle";
 import { DrizzleContext } from "drizzle-react";
 import Germoney from "./contracts/Germoney.json";
 
-const options = { contracts: [Germoney] };
+const options = {
+  contracts: [Germoney],
+  web3: {
+    fallback: {
+      url: "wss://mainnet.infura.io/ws/"
+    }
+  }
+};
 const drizzleStore = generateStore(options);
 const drizzle = new Drizzle(options, drizzleStore);
 
