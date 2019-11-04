@@ -62,8 +62,7 @@ export default class Germoney extends React.Component {
   }
 
   render() {
-    const { web3 } = window;
-
+    const { ethereum } = window;
     const sectionWithWeb3 = (
       <div>
         <div className="section">
@@ -117,7 +116,7 @@ export default class Germoney extends React.Component {
             Ethereum ecosystem.
           </p>
         </div>
-        {web3 ? sectionWithWeb3 : sectionWithoutWeb3}
+        {ethereum ? sectionWithWeb3 : sectionWithoutWeb3}
         <div className="section">
           <h2>Germoney in numbers</h2>
           <p>
