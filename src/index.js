@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import { Drizzle, generateStore } from "drizzle";
-import { DrizzleContext } from "drizzle-react";
+import { Drizzle, generateStore } from "@drizzle/store";
+import { DrizzleContext } from "@drizzle/react-plugin";
 import Germoney from "./contracts/Germoney.json";
 
 const options = {

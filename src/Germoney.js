@@ -22,9 +22,13 @@ export default class Germoney extends React.Component {
       .totalSupply()
       .call();
 
-    const balance = await this.props.drizzle.contracts.Germoney.methods
-      .balanceOf(this.props.drizzleState.accounts[0])
-      .call();
+    var account = this.props.drizzleState.accounts[0];
+
+    const balance = account
+      ? await this.props.drizzle.contracts.Germoney.methods
+          .balanceOf(account)
+          .call()
+      : 0;
 
     const realBalance = balance / 100;
     const totalSupply = supplyWithDecimals / 100;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Germoney from "./Germoney";
 
-import { DrizzleContext } from "drizzle-react";
+import { DrizzleContext } from "@drizzle/react-plugin";
 
 class App extends Component {
   render() {
