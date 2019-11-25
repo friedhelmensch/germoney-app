@@ -116,7 +116,7 @@ export default class Germoney extends React.Component {
           <img src={logo} alt="drizzle-logo" />
           <h1>Germoney</h1>
           <p>
-            Very simplistic interface to buy the most important token in the
+            Very simplistic interface to buy a very important token in the
             Ethereum ecosystem.
           </p>
         </div>
@@ -136,6 +136,11 @@ export default class Germoney extends React.Component {
           </p>
           <strong>Price: </strong>
           {this.state.priceInEth + " ETH/GER"}
+        </div>
+        <div className="section">
+          <h2>Contact information</h2>
+          <p>Jean-Pierre Truc.</p>
+          <p>therealgermoney@protonmail.com</p>
         </div>
       </div>
     );
