@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
+import { projectId } from "./configuration/config.json";
 import { Drizzle, generateStore } from "@drizzle/store";
 import { DrizzleContext } from "@drizzle/react-plugin";
 import Germoney from "./contracts/Germoney.json";
@@ -12,9 +13,9 @@ const options = {
   contracts: [Germoney],
   web3: {
     fallback: {
-      url: "wss://mainnet.infura.io/ws/"
-    }
-  }
+      url: `wss://mainnet.infura.io/ws/v3/${projectId}`,
+    },
+  },
 };
 const drizzleStore = generateStore(options);
 const drizzle = new Drizzle(options, drizzleStore);
